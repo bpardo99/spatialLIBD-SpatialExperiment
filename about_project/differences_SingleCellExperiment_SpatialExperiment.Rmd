@@ -1,0 +1,60 @@
+---
+title: "Differences between SingleCellExperiment and SpatialExperiment objects"
+author: "Brenda Pardo"
+date: "08/29/2020"
+output:
+  html_document:
+    df_print: paged
+---
+## **VisiumExperiment**
+- Is a class is designed to contain spatial gene expression data. 
+- It inherits all the slots from SpatialExperiment class, including the SpatialExperiment slot ```spatialCoordas```.  
+- A VisiumExperiment object can use all SpatialExperiment methods, including the SpatialExperiment methods ```spatialCoords-getter```, ```spatialCoords-setter``` and 
+```spatialCoordsNames-getter```.  
+<br>
+
+
+
+### **SpatialExperiment**
+- From SingleCellExperiment inherits the slots and all SingleCellExperiment methods can be used in a SpatialExperiment object.
+
+#### **Slots (attributes) from SpatialExperiment**
+**spatialCoords**  
+Spatial coordinates of the cells.
+<br>
+
+
+
+### **Slots (attributes) of VisiumExperiment**
+**inTissue**
+Contains a mark of mask of TRUE/FALSE Barcodes spots, indicating which ones are in tissue and which ones are not.
+
+
+
+**imagePaths**
+Contains a list of imagePaths.
+The SpatialExperiment package contains a folder ```/.../SpatialExperiment/extdata/10x_visium/images/``` were images are saved.
+
+**scaleFactors**
+List of scale factors
+<br>
+
+
+
+### **Methods of VisiumExperiment**
+- ```imagePaths-getter```, ```imagePaths-setter```.  
+- ```scaleFactors-getter```, ```scaleFactors-setter```.  
+- ```isInTissue```.  
+- ```VisiumExperiment show method```.  
+<br>
+
+
+
+### **Arrangement of data in SingleCellExperiment vs VisiumExperiment**
+- spatial coordinates in the object sce from spatialLIBD are in colData. In the new Visium experiment should go in the slot spatialCoords. Columns: *Which else?*
+-images, which are in metadata, will be in the slot imagePaths from the VisiumExperiment class.
+
+- Put scale factors in the scaleFactors slot. Scale factors are in https://github.com/LieberInstitute/HumanPilot/blob/master/10X/151507/scalefactors_json.json
+
+- Use the VisiumExperiment method show().
+
