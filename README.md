@@ -1,2 +1,2 @@
 # spatialLIBD-SpatialExperiment
-Repository containing code to use the object SpatialExperiment instead of the SingleCellExperiment in the spatialLIBD package.
+Repository containing code to use the VisiumExperiment class instead of SingleCellExperiment in the spatialLIBD package.
