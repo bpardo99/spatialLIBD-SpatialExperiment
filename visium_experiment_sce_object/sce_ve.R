@@ -1,6 +1,8 @@
+#Script that creates a VisiumExperiment object from the data of the object sce, which belongs to the class SingleCellExperiment
+#Brenda Pardo
+
 ########################################################################################
 #VisiumExperiment object with one imagePath and sample column in colData
-#Brenda Pardo
 ########################################################################################
 
 
